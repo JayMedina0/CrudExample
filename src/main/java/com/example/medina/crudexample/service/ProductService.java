@@ -1,7 +1,7 @@
 package com.example.medina.crudexample.service;
 
-import com.example.medina.crudexample.dao.ProductDao;
-import com.example.medina.crudexample.model.Product;
+import com.example.medina.crudexample.dao.VehicleDao;
+import com.example.medina.crudexample.model.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,23 +13,23 @@ import java.util.UUID;
 @Service
 public class ProductService {
 
-    private final ProductDao ProductDao;
+    private final VehicleDao VehicleDao;
 
     @Autowired
-    public ProductService(@Qualifier("fakeDao") ProductDao ProductDao) {
-        this.ProductDao = ProductDao;
+    public ProductService(@Qualifier("fakeDao") VehicleDao VehicleDao) {
+        this.VehicleDao = VehicleDao;
     }
 
-    public int addProduct(Product product) {
-        return ProductDao.addProduct(product);
+    public int addProduct(Vehicle vehicle) {
+        return VehicleDao.addProduct(vehicle);
     }
 
-    public List<Product> getAllProducts(){
-        return ProductDao.selectAllProducts();
+    public List<Vehicle> getAllProducts(){
+        return VehicleDao.selectAllProducts();
     }
 
-    public Optional<Product> getProductById(UUID uuid){
-       return ProductDao.selectProductById(uuid);
+    public Optional<Vehicle> getProductById(UUID uuid){
+       return VehicleDao.selectProductById(uuid);
     }
 
 //    public int replaceProductById(UUID uuid, Product product){
@@ -38,7 +38,7 @@ public class ProductService {
 //        return 1;
 //    }
     public int removeProductByID(UUID uuid){
-        ProductDao.deleteProductById(uuid);
+        VehicleDao.deleteProductById(uuid);
         return 1;
     }
 

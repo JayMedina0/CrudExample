@@ -4,13 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.UUID;
 
-public class Product {
+public class Vehicle {
 
     private final UUID id;
     private final String firstName;
     private final String lastName;
 
-    public Product(@JsonProperty("id") UUID id,
+    public Vehicle(@JsonProperty("id") UUID id,
                    @JsonProperty("firstName") String firstName,
                    @JsonProperty("lastName") String lastName) {
         this.id = id;
