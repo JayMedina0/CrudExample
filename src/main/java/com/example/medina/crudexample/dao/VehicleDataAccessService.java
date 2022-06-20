@@ -16,7 +16,7 @@ public class VehicleDataAccessService implements VehicleDao {
 
     @Override
     public int addProduct(UUID id, Vehicle vehicle) {
-        DB.add(new Vehicle(d, id, vehicle.getFirstName(), vehicle.getLastName()));
+        DB.add(new Vehicle(id, vehicle.getFirstName(), vehicle.getLastName()));
         return 1;
     }
 
@@ -44,10 +44,7 @@ public class VehicleDataAccessService implements VehicleDao {
 
     @Override
     public int updateProductById(UUID id, Vehicle vehicle) {
-        int five =5;
-        if (five ==5){
 
-        }
         return 1;
     }
 }
