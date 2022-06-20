@@ -11,28 +11,28 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class ProductService {
+public class VehicleService {
 
     private final VehicleDao VehicleDao;
 
     @Autowired
-    public ProductService(@Qualifier("fakeDao") VehicleDao VehicleDao) {
+    public VehicleService(@Qualifier("fakeDao") VehicleDao VehicleDao) {
         this.VehicleDao = VehicleDao;
     }
 
-    public int addProduct(Vehicle vehicle) {
-        return VehicleDao.addProduct(vehicle);
+    public int addVehicle(Vehicle vehicle) {
+        return VehicleDao.addVehicle(vehicle);
     }
 
     public List<Vehicle> getAllProducts(){
-        return VehicleDao.selectAllProducts();
+        return VehicleDao.selectAllVehicles();
     }
 
     public Optional<Vehicle> getProductById(UUID uuid){
-       return VehicleDao.selectProductById(uuid);
+       return VehicleDao.selectVehicleById(uuid);
     }
 
-//    public int replaceProductById(UUID uuid, Product product){
+//    public int updateVehicleById(UUID uuid, Product product){
 //
 //        ProductDao.updateProductById(UUID,
 //        return 1;

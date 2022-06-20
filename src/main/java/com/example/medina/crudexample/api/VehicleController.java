@@ -1,7 +1,7 @@
 package com.example.medina.crudexample.api;
 
 import com.example.medina.crudexample.model.Vehicle;
-import com.example.medina.crudexample.service.ProductService;
+import com.example.medina.crudexample.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,23 +14,23 @@ import java.util.UUID;
 public class VehicleController {
 
 
-    private final ProductService ProductService;
+    private final VehicleService VehicleService;
 
     @Autowired
-    public VehicleController(ProductService ProductService) {
-        this.ProductService = ProductService;
+    public VehicleController(VehicleService VehicleService) {
+        this.VehicleService = VehicleService;
     }
     @PostMapping
     public void addProduct(@RequestBody Vehicle vehicle) {
-        ProductService.addProduct(vehicle);
+        VehicleService.addVehicle(vehicle);
     }
     @GetMapping
     public List getAllPeople(@RequestBody Vehicle vehicle) {
-        return ProductService.getAllProducts();
+        return VehicleService.getAllProducts();
     }
     @GetMapping("{uuid}")
     public Optional<Vehicle> getProductById(@PathVariable("uuid") UUID uuid){
-        return (ProductService.getProductById(uuid));
+        return (VehicleService.getProductById(uuid));
     }
    // @PutMapping("{uuid}") asdfasfdsafdsa
 

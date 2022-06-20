@@ -3,6 +3,7 @@ package com.example.medina.crudexample.dao;
 import com.example.medina.crudexample.model.Vehicle;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +11,9 @@ import java.util.UUID;
 
 @Repository("fakeDao")
 public class VehicleDataAccessService implements VehicleDao {
+
+    //TODO Database connections
+    //TODO JPA
 
     private static List<Vehicle> DB = new ArrayList<>();
 
@@ -30,7 +34,6 @@ public class VehicleDataAccessService implements VehicleDao {
       return  DB.stream()
                 .filter(vehicle -> vehicle.getId().equals(uuid))
                 .findFirst();
-
     }
 
 
