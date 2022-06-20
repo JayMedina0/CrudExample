@@ -38,7 +38,7 @@ public class ProductService {
 //        return 1;
 //    }
     public int removeProductByID(UUID uuid){
-        VehicleDao.deleteProductById(uuid);
+        VehicleDao.deleteVehicleById(uuid);
         return 1;
     }
 

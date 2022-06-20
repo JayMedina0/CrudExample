@@ -15,18 +15,18 @@ public class VehicleDataAccessService implements VehicleDao {
 
 
     @Override
-    public int addProduct(UUID id, Vehicle vehicle) {
+    public int addVehicle(UUID id, Vehicle vehicle) {
         DB.add(new Vehicle(id, vehicle.getFirstName(), vehicle.getLastName()));
         return 1;
     }
 
     @Override
-    public List<Vehicle> selectAllProducts() {
+    public List<Vehicle> selectAllVehicles() {
         return DB;
     }
 
     @Override
-    public Optional<Vehicle> selectProductById(UUID uuid) {
+    public Optional<Vehicle> selectVehicleById(UUID uuid) {
       return  DB.stream()
                 .filter(vehicle -> vehicle.getId().equals(uuid))
                 .findFirst();
@@ -35,7 +35,7 @@ public class VehicleDataAccessService implements VehicleDao {
 
 
     @Override
-    public int deleteProductById(UUID uuid) {
+    public int deleteVehicleById(UUID uuid) {
          DB.stream()
                 .filter(vehicle -> vehicle.getId().equals(uuid))
                 .findFirst();
@@ -43,7 +43,7 @@ public class VehicleDataAccessService implements VehicleDao {
     }
 
     @Override
-    public int updateProductById(UUID id, Vehicle vehicle) {
+    public int updateVehicleById(UUID id, Vehicle vehicle) {
 
         return 1;
     }

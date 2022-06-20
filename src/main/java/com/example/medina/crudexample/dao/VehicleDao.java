@@ -8,18 +8,19 @@ import java.util.UUID;
 
 public interface VehicleDao {
 
-    int addProduct(UUID id, Vehicle vehicle);
+    int addVehicle(UUID id, Vehicle vehicle);
 
-    default int addProduct(Vehicle vehicle) {
+    default int addVehicle(Vehicle vehicle) {
         UUID id = UUID.randomUUID();
-        return addProduct(id, vehicle);
+        return addVehicle(id, vehicle);
     }
 
-    List<Vehicle> selectAllProducts();
+    List<Vehicle> selectAllVehicles();
 
-    Optional<Vehicle> selectProductById(UUID uuid);
+    Optional<Vehicle> selectVehicleById(UUID uuid);
 
-    int deleteProductById(UUID uuid);
+    int deleteVehicleById(UUID uuid);
 
-    int updateProductById(UUID id, Vehicle vehicle);
+    int updateVehicleById(UUID id, Vehicle vehicle);
+
 }
