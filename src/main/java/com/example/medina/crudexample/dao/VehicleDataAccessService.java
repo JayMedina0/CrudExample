@@ -16,7 +16,7 @@ public class VehicleDataAccessService implements VehicleDao {
 
     @Override
     public int addProduct(UUID id, Vehicle vehicle) {
-        DB.add(new Vehicle(id, vehicle.getFirstName(), vehicle.getLastName()));
+        DB.add(new Vehicle(d, id, vehicle.getFirstName(), vehicle.getLastName()));
         return 1;
     }
 
