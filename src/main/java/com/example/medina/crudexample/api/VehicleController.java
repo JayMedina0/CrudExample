@@ -13,26 +13,28 @@ import java.util.UUID;
 @RestController
 public class VehicleController {
 
-
     private final VehicleService VehicleService;
 
     @Autowired
     public VehicleController(VehicleService VehicleService) {
         this.VehicleService = VehicleService;
     }
+
     @PostMapping
     public void addProduct(@RequestBody Vehicle vehicle) {
         VehicleService.addVehicle(vehicle);
     }
+
     @GetMapping
     public List getAllPeople(@RequestBody Vehicle vehicle) {
         return VehicleService.getAllProducts();
     }
-    @GetMapping("{uuid}")
-    public Optional<Vehicle> getProductById(@PathVariable("uuid") UUID uuid){
-        return (VehicleService.getProductById(uuid));
+
+    @GetMapping("{pathId}")
+    public Optional<Vehicle> getProductById(@PathVariable("pathId") UUID uuid) {
+        return (VehicleService.getVehicleById(uuid));
     }
-   // @PutMapping("{uuid}") asdfasfdsafdsa
+    // @PutMapping("{uuid}")
 
 
 }

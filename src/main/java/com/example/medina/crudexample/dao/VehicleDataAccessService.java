@@ -17,7 +17,6 @@ public class VehicleDataAccessService implements VehicleDao {
 
     private static List<Vehicle> DB = new ArrayList<>();
 
-
     @Override
     public int addVehicle(UUID id, Vehicle vehicle) {
         DB.add(new Vehicle(id, vehicle.getFirstName(), vehicle.getLastName()));
@@ -36,17 +35,22 @@ public class VehicleDataAccessService implements VehicleDao {
                 .findFirst();
     }
 
-
     @Override
     public int deleteVehicleById(UUID uuid) {
-         DB.stream()
-                .filter(vehicle -> vehicle.getId().equals(uuid))
-                .findFirst();
+       Optional<Vehicle> vehicle =  selectVehicleById(uuid);
+       if(vehicle.isEmpty()){
+           return 0;
+       }
+       DB.remove(uuid);
         return 1;
     }
 
     @Override
-    public int updateVehicleById(UUID id, Vehicle vehicle) {
+    public int updateVehicleById(UUID uuid, Vehicle vehicle) {
+        selectVehicleById(uuid)
+                .map(v -> {
+                    int indexOfVehicleToDelete = DB.indexOf(vehicle)
+                })
 
         return 1;
     }

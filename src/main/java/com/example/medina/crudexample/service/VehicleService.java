@@ -28,15 +28,16 @@ public class VehicleService {
         return VehicleDao.selectAllVehicles();
     }
 
-    public Optional<Vehicle> getProductById(UUID uuid){
-       return VehicleDao.selectVehicleById(uuid);
+    public Optional<Vehicle> getVehicleById(UUID uuid){
+        //this might cause issues investigate further
+        return Optional.ofNullable(VehicleDao.selectVehicleById(uuid)
+                .orElse(null));
     }
 
-//    public int updateVehicleById(UUID uuid, Product product){
-//
-//        ProductDao.updateProductById(UUID,
-//        return 1;
-//    }
+    public int updateVehicleById(UUID uuid, Vehicle vehicle){
+        VehicleDao.updateVehicleById(uuid,vehicle);
+        return 1;
+    }
     public int removeProductByID(UUID uuid){
         VehicleDao.deleteVehicleById(uuid);
         return 1;
