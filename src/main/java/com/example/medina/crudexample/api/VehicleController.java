@@ -30,8 +30,8 @@ public class VehicleController {
         return VehicleService.getAllProducts();
     }
 
-    @GetMapping("{pathId}")
-    public Optional<Vehicle> getProductById(@PathVariable("pathId") UUID uuid) {
+    @GetMapping("{id}")
+    public Optional<Vehicle> getProductById(@PathVariable("id") UUID uuid) {
         return (VehicleService.getVehicleById(uuid));
     }
     // @PutMapping("{uuid}")

@@ -2,8 +2,6 @@ package com.example.medina.crudexample.dao;
 
 import com.example.medina.crudexample.model.Vehicle;
 import org.springframework.stereotype.Repository;
-
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -47,10 +45,11 @@ public class VehicleDataAccessService implements VehicleDao {
 
     @Override
     public int updateVehicleById(UUID uuid, Vehicle vehicle) {
-        selectVehicleById(uuid)
-                .map(v -> {
-                    int indexOfVehicleToDelete = DB.indexOf(vehicle)
-                })
+//        selectVehicleById(uuid)
+//                .map(v -> {
+//                    int indexOfVehicleToDelete = DB.indexOf(vehicle);
+//
+//                })
 
         return 1;
     }
